@@ -1,6 +1,14 @@
 import axios from 'axios';
 import { lineFoods, lineFoodsReplace } from '../urls/index'
 
+export const fetchLineFoods = () => {
+  return axios.get(lineFoods)
+  .then(res => {
+    return res.data
+  })
+  .catch((e) => { throw e; })
+};
+
 export const replaceLineFoods = (params) => {
   return axios.put(lineFoodsReplace,
     {
